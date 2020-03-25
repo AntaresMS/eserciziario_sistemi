@@ -38,9 +38,16 @@
 		{\large \today\par}
 	\end{titlepage}
 	\thispagestyle{empty}
-	
-	\section*{Sistemi LTI a tempo continuo}
-	\paragraph*{Esercizio 1.1}
+	\section*{Nota dell'autore}
+	Il presente eserciziario è alla sua prima versione e il controllo della sua qualità è stato interamente a carico dell'autore.\\Se il lettore dovesse quindi trovare degli errori o delle imprecisioni, sarei felice se me lo segnalasse scrivendomi una mail all'indirizzo \texttt{magdalena.solitro@studenti.univr.it}.\\
+	Se il lettore avesse piacere di inviare nuovi esercizi svolti o se volesse collaborare in qualche modo alle nuove versioni della dispensa, può farmelo presente scrivendomi allo stesso indirizzo mail.\\ \\
+	Segnalo inoltre che è presente una repository dell'eserciziario su \texttt{github} all'indirizzo:\\
+	\texttt{https://github.com/AntaresMS/eserciziario_sistemi.git}\\ dove il lettore può trovare anche i sorgenti \texttt{.tex}.
+	\newpage
+	\tableofcontents
+	\newpage
+	\section{Sistemi LTI a tempo continuo}
+	\subsection*{Esercizio 1.1}
 	Si consideri il sistema dinamico rappresentato dalla seguente equazione differenziale:
 	\[
 		\begin{cases}
@@ -56,7 +63,7 @@
    		\item Determinare la risposta impulsiva nel dominio delle frequenze (Laplace)
    		\item Determinare la risposta totale nel dominio delle frequenze (Laplace)
    	\end{enumerate}
-   	-----------------------------------------------------------------------------------------------------------------------\\
+   	\par\noindent\rule{\textwidth}{0.4pt}
    	\begin{enumerate}
    	\item Un sistema dinamico \'e \textbf{asintoticamente stabile} se e solo se tutte le sue radici caratteristiche si trovano nel semipiano negativo del piano complesso:
    	\[
@@ -121,36 +128,36 @@
 	\]
 	\vspace{5px}
 	\[
-		V(s) (s^2 + 5s + 4) = U(s)(s-1) -1
+		V(s) (s^2 + 5s + 4) = U(s)(s-1) + 1
 	\]
 	\vspace{5px}
 	\[
-		V(s) = U(s)\frac{s-1}{(s^2+5s+4)}-\frac{1}{(s^2+5s+4)}
+		V(s) = U(s)\frac{s-1}{(s^2+5s+4)}+\frac{1}{(s^2+5s+4)}
 	\]
 	\vspace{5px}
 	\\Dato che $u(t) = e^{-2t} \delta_{-1}(t)$, ricaviamo che $U(s) = \mathcal{L}[u(t)] = \frac{1}{s+2} $ , e quindi
 	\[
-		V(s) = \frac{s-1}{(s+4)(s+2)(s+1)}-\frac{1}{(s+4)(s+1)} = \frac{-3}{(s+4)(s+2)(s+1)}
+		V(s) = \frac{s-1}{(s+4)(s+2)(s+1)}+\frac{1}{(s+4)(s+1)} = \frac{2s+1}{(s+4)(s+2)(s+1)}
 	\]
 	Applico il metodo dei fratti semplici:
 	\[
 		V(s) = \frac{A}{s+4}+\frac{B}{s+1}+\frac{C}{s+2}
 	\]
 	Ricavo i coefficienti A, B, C:\\ \\
-	$A = (s+4)\frac{-3}{(s+4)(s+2)(s+1)}\Bigl\vert_{s=-4} = -\frac{1}{2}$\\ \\
-	$B = (s+1)\frac{-3}{(s+4)(s+2)(s+1)}\Bigl\vert_{s=-1} = -1$\\ \\
-	$C = (s+2)\frac{-3}{(s+4)(s+2)(s+1)}\Bigl\vert_{s=-2} = \frac{3}{2}$\\ \\
+	$A = (s+4)\frac{2s+1}{(s+4)(s+2)(s+1)}\Bigl\vert_{s=-4} = -\frac{7}{6}$\\ \\
+	$B = (s+1)\frac{2s+1}{(s+4)(s+2)(s+1)}\Bigl\vert_{s=-1} = -\frac{1}{3}$\\ \\
+	$C = (s+2)\frac{2s+1}{(s+4)(s+2)(s+1)}\Bigl\vert_{s=-2} = \frac{3}{2}$\\ \\
 	Da cui ricaviamo l'espressione di V(s) scomposta:
 	\[
-		V(s) = -\frac{1}{2}\frac{1}{s+4}-\frac{1}{s+1}+\frac{3}{2}\frac{1}{s+2}
+		V(s) = -\frac{7}{6}\cdot\frac{1}{s+4}-\frac{1}{3}\cdot\frac{1}{s+1}+\frac{3}{2}\frac{1}{s+2}
 	\]
 	Eseguendo l'antitrasformata di Laplace otteniamo l'espressione della risposta totale nel dominio del tempo:
 	\[
-		v(t) = \left(-\frac{1}{2}e^{-4t}-e^{-t}+\frac{3}{2}e^{-2t}\right)\delta_{-1}(t)
+		v(t) = \left(-\frac{7}{6}e^{-4t}-\frac{1}{3}e^{-t}+\frac{3}{2}e^{-2t}\right)\delta_{-1}(t)
 	\]
 	\end{enumerate}
 	\newpage
-	\paragraph*{Esercizio 1.2 - parziale del 02/05/2019}
+	\subsection*{Esercizio 1.2 - parziale del 02/05/2019}
 	Si consideri il seguente sistema dinamico rappresentato dall'equazione differenziale:
 	\[
 		\begin{cases}
@@ -166,7 +173,7 @@
 		\item Calcolare la risposta impulsiva nel \underline{dominio del tempo}
 		\item Calcolare la risposta forzata utilizzando l'antitrasformata di Laplace
 	\end{enumerate}
---------------------------------------------------------------------------------------------------------------------------\\
+	\par\noindent\rule{\textwidth}{0.4pt}
 	\begin{enumerate}
 		\item Dobbiamo verificare che tutte le radici caratteristiche dell'equazione differenziale siano \textit{minori di 0}:
 		\[
@@ -289,7 +296,7 @@
 		\]
 	\end{enumerate}
 	\newpage
-	\paragraph*{Esercizio 1.3}
+	\subsection*{Esercizio 1.3}
 	Si consideri il seguente sistema dinamico rappresentato dall'equazione differenziale:
 	\[
 		\begin{cases}
@@ -305,7 +312,7 @@
 		\item Calcolare la risposta impulsiva nel \underline{dominio del tempo}
 		\item Calcolare l'evoluzione forzata con il \underline{prodotto di convoluzione}
 	\end{enumerate}
-	---------------------------------------------------------------------------------------------------------------------------\\
+	\par\noindent\rule{\textwidth}{0.4pt}
 	\begin{enumerate}
 		\item L'equazione caratteristica del sistema \'e:
 		\[
@@ -384,7 +391,7 @@
 		\end{align*}
 	\end{enumerate}
 	\newpage
-	\paragraph*{Esercizio 1.4} Si consideri il modello ingresso/uscita a tempo continuo descritto dalla seguente equazione differenziale:
+	\subsection*{Esercizio 1.4} Si consideri il modello ingresso/uscita a tempo continuo descritto dalla seguente equazione differenziale:
 	\[
 	\begin{cases}
 		\ddot{v}(t) + \dot{v} -2v(t) = \dot{u}(t) - u(t)\\
@@ -399,7 +406,7 @@
 		\item Calcolare l'evoluzione forzata nel dominio delle frequenze
 		\item Calcolare la risposta totale del sistema nel dominio delle frequenze
 	\end{enumerate}
-	---------------------------------------------------------------------------------------------------------------------------
+	\par\noindent\rule{\textwidth}{0.4pt}
 	\begin{enumerate}
 		\item Verifichiamo la stabilità asintotica del sistema.\\La sua equazione caratteristica è data da:
 		\[
@@ -490,7 +497,7 @@
 		\]
 	\end{enumerate}
 	\newpage
-	\paragraph{Esercizio 1.5} Si consideri il sistema dinamico SISO a tempo continuo descritto dalla seguente equazione differenziale:
+	\subsection*{Esercizio 1.5} Si consideri il sistema dinamico SISO a tempo continuo descritto dalla seguente equazione differenziale:
 	\[
 		\begin{cases}
 			\ddot{v}(t) + 3\dot{v}(t) + 2v(t) = \frac{1}{3}u(t)\\
@@ -505,7 +512,7 @@
 		\item Calcolare l'evoluzione forzata
 		\item Calcolare la risposta impulsiva usando la Trasformata di Laplace
 	\end{enumerate}
-	---------------------------------------------------------------------------------------------------------------------
+	\par\noindent\rule{\textwidth}{0.4pt}
 	\begin{enumerate}
 		\item L'equazione caratteristica del sistema è
 		\[
@@ -555,7 +562,7 @@
 		\]
 		$[ (d_{1}e^{-t} +4d_{2}e^{-2t}) \delta_{-1}(t) + 2(-d_{1}e^{-t} - 2d_{2}e^{-2t}) \delta(t) + (d_{1}e^{-t} +  d_{2}e^{-2t}) \frac{d}{dt}\delta(t) ] + 3[  (-d_{1}e^{-t} - 2d_{2}e^{-2t}) \delta_{-1}(t) + (d_{1}e^{-t} +  d_{2}e^{-2t}) \delta(t) ] + 2[  ( d_{1}e^{-t} +  d_{2}e^{-2t}) \delta_{-1}(t) ] = \frac{1}{3}\delta(t)
 		$
-		\vspace{5mm}
+		\vspace{5px}
 		\\
 		$
 			\begin{cases}
@@ -564,14 +571,14 @@
 			\frac{d}{dt}\delta(t) [ (d_{1}e^{-t} +  d_{2}e^{-2t}) ] = 0   
 			\end{cases}
 		$
-		\vspace{5mm}
+		\vspace{5px}
 		\\
 		$
 			\begin{cases}
 			-2d_{1} -4d_{2} + 3d_{1} + 3d_{2} -  \frac{1}{3} = 0\\  d_{1} + d_{2} = 0\\
 			\end{cases}
 		$
-		\vspace{5mm}
+		\vspace{5px}
 		\\
 		$
 			\begin{cases}
@@ -579,7 +586,7 @@
 			d_{2} = - \frac{1}{6} \\
 			\end{cases}
 		$
-		\vspace{5mm}
+		\vspace{5px}
 		\\
 		La risposta impulsiva è quindi: 
 		\[
@@ -594,7 +601,7 @@
 		\end{align*}
 		\\ \\
 		\textbf{Dominio delle frequenze (Trasformata di Laplace)}
-		\vspace{5mm}
+		\vspace{5px}
 		\\
 		L'evoluzione forzata nel dominio delle frequenze si ottiene moltiplicando la funzione di trasferimento, $H(s)$, per la trasformata di Laplace dell'ingresso:
 		\[
@@ -608,12 +615,12 @@
 		\[
 			V_{f}(s) = \frac{1}{3} \left( \frac{C_{1,1}}{s+1} + \frac{C_{2,1}}{s+2} + \frac{C_{2,2}}{(s+2)^2} \right)
 		\]
-		\vspace{5mm}
+		\vspace{5px}
 		\\
-		$ C_{1,1} = (s+1)\frac{1}{(s+1)(s+2)^2 } |_{s=-1} = 1 $ \vspace{5mm}
+		$ C_{1,1} = (s+1)\frac{1}{(s+1)(s+2)^2 } |_{s=-1} = 1 $ \vspace{5px}
 		\\ 
 		$ C_{2,1} =\frac{d}{ds}( (s+2)^2\frac{1}{(s+1)(s+2)^2}) |_{s=-2} = -1 $
-		\vspace{5mm}
+		\vspace{5px}
 		\\ 
 		$ C_{2,2} = (s+2)^2\frac{1}{(s+1)(s+2)^2 } |_{s=-2} = -1 $ \\ \\
 		Quindi otteniamo l'espressione definitiva di $V_f$ nel dominio delle frequenze:
@@ -656,12 +663,12 @@
 		\]
 	\end{enumerate}
 	\newpage
-	\section*{Schemi a blocchi}
-	\paragraph*{Esercizio 2.1}
+	\section{Schemi a blocchi}
+	\subsection*{Esercizio 2.1}
 	Calcolare la funzione di trasferimento del seguente schema a blocchi:
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.5]{./images/schema21.png}
+		\includegraphics[scale=0.6]{./images/schema21.png}
 	\end{figure}
 
 	Possiamo utilizzare la \textbf{formula di Mason} per calcolare la funzione di trasferimento:
@@ -696,7 +703,7 @@
 		H(s) = \frac{AC(1) + FC(1-AB) + FG(1-AB) + AG}{1 + AB(1+CD-FCE-FGE)-E(AC+AG+FC+FG)+CD}
 	\]
 	\newpage
-	\paragraph*{Esercizio 2.2}
+	\subsection*{Esercizio 2.2}
 	Calcolare la funzione di trasferimento del seguente schema a blocchi:
 	\begin{figure}[h!]
 		\centering
@@ -704,7 +711,7 @@
 	\end{figure}
     \\
 	Individuiamo tutti gli anelli presenti nello schema a blocchi:\\
-	$A_1 = G$, \quad $A_2 = BCDH$, \quad $A_3 = EDH$\\ \\
+	$A_1 = G$, \quad $A_2 = BCDH$, \quad $A_3 = EDH$, \quad $A_4 = BFH$\\ \\
 	I percorsi sono invece:\\
 	$P_1 = ABCD$, \quad $P_2 = AED$, \quad $P_3 = ABF$\\ \\
 	Utilizziamo quindi la formula di Mason per calcolare la funzione di trasferimento:
@@ -713,18 +720,18 @@
 	\]
 	Calcoliamo $\Delta$: tutti gli anelli si toccano in qualche punto, quindi il determinante conterr\'a solo la sommatoria di tutti gli anelli:
 	\[
-		\Delta = 1 - (G + BCDH + EDH)
+		\Delta = 1 - (G + BCDH + EDH + BFH)
 	\]
-	Calcoliamo i determinanti relativi ai singoli percorsi, notando che il percorso $P_2$ non viene toccato dall'anello G:\\
+	Calcoliamo i determinanti relativi ai singoli percorsi, notando che il percorso $P_2$ non viene toccato dall'anello G:\vspace{5px}\\
 	$\Delta_1 = 1$\\
 	$\Delta_2 = 1-G$ \\
 	$\Delta_3 = 1$ \\ \\
 	Quindi la funzione di trasferimento risulta essere:
 	\[
-		H(s) = \frac{A(BCD + ED + BF)}{1 - G - DH(BC + E)}
+		H(s) = \frac{A(BCD + ED + BF)}{1 - (G + BCDH + EDH + BFH)}
 	\]
 	\newpage
- 	\paragraph{Esercizio 2.3} Calcolare la funzione di trasferimento del seguente schema a blocchi:
+ 	\subsection*{Esercizio 2.3} Calcolare la funzione di trasferimento del seguente schema a blocchi:
  	\begin{figure}[h!]
  		\centering
  		\includegraphics[scale=0.5]{./images/schema23.png}
@@ -746,7 +753,7 @@
  		H(s) = \frac{1}{\Delta}\sum_i P_i \Delta_i = \frac{GF + A(1-GH)}{1+GH+GFA}
  	\]
 	\newpage
-	\paragraph*{Esercizio 2.4}
+	\subsection*{Esercizio 2.4}
 	Calcolare la funzione di trasferimento del seguente schema a blocchi:
 	\begin{figure}[h!]
 		\centering
@@ -771,7 +778,7 @@
 		H(s) = \frac{G_1G_4(G_2+G_3)}{1+G_1G_4(H_1+G_2H_2)}
 	\]
 	\newpage
-	\paragraph*{Esercizio 2.5 - appello del 13/09/2019} Calcolare la funzione di trasferimento del seguente sistema a blocchi:
+	\subsection*{Esercizio 2.5 - appello del 13/09/2019} Calcolare la funzione di trasferimento del seguente sistema a blocchi:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.5]{./images/schema25.png}
@@ -791,7 +798,7 @@
 		H(s) = \frac{1}{\Delta}\sum_i P_i \Delta_i = \frac{ABC + DBC}{1+ABFE - ABCE + BCG + DBFE}
 	\]
 	\newpage
-	\paragraph*{Esercizio 2.6} Calcolare la funzione di trasferimento del seguente schema a blocchi \textit{utilizzando l'algebra dei blocchi}:
+	\subsection*{Esercizio 2.6} Calcolare la funzione di trasferimento del seguente schema a blocchi \textit{utilizzando l'algebra dei blocchi}:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.5]{./images/schema26.png}
@@ -849,7 +856,7 @@
 		H(s) = A(s) + B(s)
 	\]
 	\newpage
-	\paragraph*{Esercizio 2.7 - appello del 13/09/2019} Calcolare la funzione di trasferimento del seguente schema a blocchi:
+	\subsection*{Esercizio 2.7 - appello del 13/09/2019} Calcolare la funzione di trasferimento del seguente schema a blocchi:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.5]{./images/schema27.png}
@@ -918,8 +925,8 @@
 		H = \frac{BC(A+D)}{1+BGC+BEAF-BEAC+BEDF-BCED}
 	\]
 	\newpage
-	\section*{Sistemi LTI a tempo discreto}
-	\paragraph*{Esercizio 3.1 - appello del 01/07/2019, versione A}
+	\section{Sistemi LTI a tempo discreto}
+	\subsection*{Esercizio 3.1 - appello del 01/07/2019, versione A}
 	Dato il sistema LTI causale a tempo discreto descritto dalla seguente equazione alla differenze:
 	\[
 		\begin{cases}
@@ -935,7 +942,7 @@
 	\item Calcolare la risposta impulsiva del sistema utilizzando l'antitrasformata Zeta
 	\item Calcolare la risposta totale del sistema utilizzando l'antitrasformata Zeta
 	\end{enumerate}
-	---------------------------------------------------------------------------------------------------------------------------\\
+	\par\noindent\rule{\textwidth}{0.4pt}
 	\begin{enumerate}
 	\item Scriviamo innanzitutto l'equazione caratteristica del sistema e calcoliamo le sue radici:
 	\[
@@ -1042,7 +1049,7 @@
 	Notare che il secondo termine $\left(-\frac{1}{2}\right)^k$ \`e moltiplicato per un fattore k: questo \`e sempre dovuto al fatto che quel polo ha molteplicit\`a 2.
 	\end{enumerate}
 	\newpage
-	\paragraph*{Esercizio 3.2 - appello del 17/07/2017} Dato il seguente sistema LTI a tempo discreto
+	\subsection*{Esercizio 3.2 - appello del 17/07/2017} Dato il seguente sistema LTI a tempo discreto
 	\[
 		\begin{cases}
 			9v(k) + 6v(k-1) + v(k-2) = 3u(k) + u(k-1) \\
@@ -1059,7 +1066,7 @@
 		\item Calcolare la risposta totale con l'antitrasformata Zeta
 
 	\end{enumerate}
-	-------------------------------------------------------------------------------------------------------------------------\\
+	\par\noindent\rule{\textwidth}{0.4pt}
 	\begin{enumerate}
 		\item Cominciamo calcolando le radici dell'equazione caratteristica:
 		\[
@@ -1168,7 +1175,7 @@
 		\end{itemize}
 	\end{enumerate}
 	\newpage
-	\paragraph*{Esercizio 3.3 - parziale del 13/06/2019} Dato il seguente sistema LTI a tempo discreto:
+	\subsection*{Esercizio 3.3 - parziale del 13/06/2019} Dato il seguente sistema LTI a tempo discreto:
 	\[
 		\begin{cases}
 		v(k) + \frac{5}{14}v(k-1) -\frac{1}{14}v(k-2) = u(k) + 7u(k-2) \\
@@ -1183,7 +1190,7 @@
 		\item Calcolare la risposta impulsiva con l'antitrasformata Zeta
 		\item Calcolare la risposta totale con l'antitrasformata Zeta
 	\end{enumerate}
-	---------------------------------------------------------------------------------------------------------------------------\\
+	\par\noindent\rule{\textwidth}{0.4pt}
 	\begin{enumerate}
 		\item Scriviamo l'equazione caratteristica del sistema e calcoliamone le radici:
 		\[
@@ -1260,7 +1267,7 @@
 		\]
 		\end{enumerate}
 		\newpage
-		\paragraph*{Esercizio 3.4 - esame del 16/06/2017} Si consideri il seguente sistema LTI a tempo discreto:
+		\subsection*{Esercizio 3.4 - esame del 16/06/2017} Si consideri il seguente sistema LTI a tempo discreto:
 		\[
 			\begin{cases}
 			v(k) - \frac{1}{9}v(k-2) = 2u(k) + u(k-1) + \frac{1}{2}u(k-2)\\
@@ -1275,7 +1282,7 @@
 			\item Calcolare l'evoluzione forzata con l'antitrasformata Zeta
 			\item Calcolare la risposta totale con l'antitrasformata Zeta
 		\end{enumerate}
-		-------------------------------------------------------------------------------------------------------------------\\
+		\par\noindent\rule{\textwidth}{0.4pt}
 		\begin{enumerate}
 			\item L'equazione caratteristica del sistema è
 			\[
@@ -1383,7 +1390,7 @@
 			\]
 	\end{enumerate}
 	\newpage
-	\paragraph*{Esercizio 3.5 - parziale del 30/01/2012} Si consideri il seguente sistema LTI a tempo discreto:
+	\subsection*{Esercizio 3.5 - parziale del 30/01/2012} Si consideri il seguente sistema LTI a tempo discreto:
 	\[
 		\begin{cases}
 			v(k) - v(k-1) + 0.25v(k-2) = u(k) - 3u(k)\\
@@ -1398,7 +1405,7 @@
 		\item Il sistema \`e BIBO stabile?
 		\item Calcolare la risposta impulsiva nel dominio del tempo
 	\end{enumerate}
-	--------------------------------------------------------------------------------------------------------------------------\\
+	\par\noindent\rule{\textwidth}{0.4pt}
 	\begin{enumerate}
 		\item L'equazione caratteristica del sistema è:\\
 		\[
@@ -1467,13 +1474,16 @@
 		\]
 	\end{enumerate}
 	\newpage
-	\section*{Diagrammi di Bode}
-	\paragraph*{Esercizio 4.1 - appello del 13/09/2019} Data la seguente funzione di trasferimento:
+	\section{Diagrammi di Bode}
+	\subsection*{Esercizio 4.1 - appello del 13/09/2019} Data la seguente funzione di trasferimento:
 	\[
 		G(s) = \frac{20s^2 + 8s + 20}{s^2(1+10s)}
 	\]
-	Riportare G(s) in forma di Bode, disegnare i diagrammi delle singole componenti elementari e il diagramma globale.\\
-	----------------------------------------------------------------------------------------------------------------------------\\Forma di Bode: 
+	Riportare G(s) in forma di Bode, disegnare i diagrammi delle singole componenti elementari e il diagramma globale.
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5mm}
+	\\
+	Forma di Bode: 
 	\[
 		G(s) = \frac{20(s^2 + 0.4s + 1)}{s^2(1+10s)} \rightarrow G(s) = 20 \cdot \frac{1}{s^2} \cdot \frac{(s^2 + 0.4s + 1)}{(1+10s)}
 	\]
@@ -1532,12 +1542,15 @@
 		\includegraphics[scale=0.6]{./images/bode41tot.png}
 	\end{figure}
 	\newpage
-	\paragraph*{Esercizio 4.2 - appello del 03/02/2017} Data la seguente funzione di trasferimento:
+	\subsection*{Esercizio 4.2 - appello del 03/02/2017} Data la seguente funzione di trasferimento:
 	\[
 		G(s) = \frac{s^3(s+1)}{s^2+2s+3}
 	\]
-	Riportare la funzione in forma di Bode, disegnare i diagrammi delle singole componenti elementari e il diagramma globale.\\
-	----------------------------------------------------------------------------------------------------------------------------\\Per portare la funzione in forma di Bode, \`e sufficiente "portare fuori" il 3 al denominatore, e otteniamo:
+	Riportare la funzione in forma di Bode, disegnare i diagrammi delle singole componenti elementari e il diagramma globale.
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5mm}
+	\\
+	Per portare la funzione in forma di Bode, \`e sufficiente "portare fuori" il 3 al denominatore, e otteniamo:
 	\[
 		G(s) = \frac{1}{3}s^3\frac{s+1}{\left(\frac{1}{3}s^2+\frac{2}{3}s+1\right)}
 	\]
@@ -1591,12 +1604,14 @@
 		\end{figure}
 	\end{itemize}
 	\newpage
-	\paragraph{Esercizio 4.3} Data la seguente funzione di trasferimento:
+	\subsection*{Esercizio 4.3} Data la seguente funzione di trasferimento:
 	\[
 	G(s) = 100\frac{(s+1)}{(s+10)(s+100)}
 	\]
-	Riportare la funzione in forma di Bode, disegnare i diagrammi delle singole componenti elementari e il diagramma globale.\\
-	---------------------------------------------------------------------------------------------------------------------\\ \\
+	Riportare la funzione in forma di Bode, disegnare i diagrammi delle singole componenti elementari e il diagramma globale.
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5mm}
+	\\
 	Forma di Bode: \quad$G(s) = \frac{100}{10 \cdot 100}\frac{s+1}{\left(0.1s+1\right)\left(0.01s+1\right)}$\quad$\rightarrow$\quad$G(s) = 0.1\frac{s+1}{\left(0.1s+1\right)\left(0.01s+1\right)}$\\\\
 	Dalla forma di Bode si deduce che la funzione di trasferimento ha un termine costante, $K_B = 0.1$, uno zero in s = -1, un polo in s = -10 e un polo in s = -100.\\Procediamo quindi tracciando i diagrammi delle componenti elementari.\\
 	\begin{itemize}
@@ -1643,12 +1658,14 @@
 		\includegraphics[scale=0.6]{./images/bode43tot.png}
 	\end{figure}
 	\newpage
-	\paragraph*{Esercizio 4.4} Data la seguente funzione di trasferimento:
+	\subsection*{Esercizio 4.4} Data la seguente funzione di trasferimento:
 	\[
 		H(s) = 30\frac{(s+10)}{s^2+3s+50}
 	\]
-	Riportare la funzione in forma di Bode, disegnare i diagrammi delle singole componenti elementari e il diagramma globale.\\
-	---------------------------------------------------------------------------------------------------------------------\\ \\
+	Riportare la funzione in forma di Bode, disegnare i diagrammi delle singole componenti elementari e il diagramma globale.
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5mm}
+	\\
 	Forma di Bode:
 	\[
 		H(s) = 30\frac{10}{50}\frac{\left(\frac{1}{10}s+1\right)}{\left(\frac{1}{50}s^2+\frac{3}{50}s+1\right)} = 6\frac{\left(\frac{1}{10}s+1\right)}{\left(\frac{1}{50}s^2+\frac{3}{50}s+1\right)} 
@@ -1705,12 +1722,14 @@
 		\end{figure}
 	\end{itemize}
 	\newpage
-	\paragraph{Esercizio 4.5} Data la seguente funzione di trasferimento:
+	\subsection*{Esercizio 4.5} Data la seguente funzione di trasferimento:
 	\[
 		H(s) = \frac{(s+1)(s^2+2s+9)}{s^3}
 	\]
-	Riportare la funzione in forma di Bode, disegnare i diagrammi delle singole componenti elementari e il diagramma globale.\\
-	---------------------------------------------------------------------------------------------------------------------\\ \\
+	Riportare la funzione in forma di Bode, disegnare i diagrammi delle singole componenti elementari e il diagramma globale.
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5mm}
+	\\
 	Forma di Bode:
 	\[
 		H(s) = \frac{9(s+1)\left(1+\frac{2}{9}s+\frac{1}{9}s^2\right)}{s^3}\quad\rightarrow\quad H(s) = 9 \cdot \frac{1}{s^3}\cdot (1+s)\left(1+\frac{2}{9}s+\frac{1}{9}s^2\right)
@@ -1772,12 +1791,14 @@
 		\includegraphics[scale=0.6]{./images/bode45tot.png}
 	\end{figure}
 	\newpage
-	\paragraph{Esercizio 4.6 - appello del 01/07/2019} Data la seguente funzione di trasferimento:
+	\subsection*{Esercizio 4.6 - appello del 01/07/2019} Data la seguente funzione di trasferimento:
 	\[
 		G(s) = \frac{10(s^2+4)}{s(s+3)(s^2+3s+4)}
 	\]
-	disegnare il diagramma di Bode (sia di ciascuna componente elementare, sia il risultante diagramma globale).\\
-	---------------------------------------------------------------------------------------------------------------------\\ \\
+	disegnare il diagramma di Bode (sia di ciascuna componente elementare, sia il risultante diagramma globale).
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5mm}
+	\\
 	Scriviamo la funzione di trasferimento in forma di Bode:
 	\[
 		G(s) = \frac{10 \cdot 4}{3 \cdot 4}\cdot\frac{1+\frac{1}{4}s^2}{s\left(1+\frac{1}{3}s\right)\left(1+\frac{3}{4}s+\frac{1}{4}s^2\right)}\quad\rightarrow\quad G(s) = \frac{10}{3}\cdot\frac{1}{s}\cdot\frac{1+\frac{1}{4}s^2}{\left(1+\frac{1}{3}s\right)\left(1+\frac{3}{4}s+\frac{1}{4}s^2\right)}
@@ -1840,15 +1861,17 @@
 		\includegraphics[scale=0.6]{./images/bode46tot.png}
 	\end{figure}
 	\newpage
-	\section*{Trasformate di Fourier}
-	\paragraph{Esercizio 5.1 - parziale del 13/06/2019} Dato il seguente schema a blocchi trovare l’uscita v(t) del sistema per via grafica lavorando nel dominio delle frequenze:
+	\section{Trasformate di Fourier}
+	\subsection*{Esercizio 5.1 - parziale del 13/06/2019} Dato il seguente schema a blocchi trovare l’uscita v(t) del sistema per via grafica lavorando nel dominio delle frequenze:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.4]{./images/fourier51.png}
 	\end{figure}
 	\\Dove $u(t) = 3cos(6\pi t) + cos(2\pi t)$, $w(t) = 2cos(4\pi t)$, $h(t) = 4sinc(4t)$, $f(t) = 2sinc(2t)$.\\
-	Periodo di campionamento con $T= 1s$. \\Si verifica il fenomeno di aliasing?  Motivare la risposta.\\ \\
-	----------------------------------------------------------------------------------------------------------------------------\\
+	Periodo di campionamento con $T= 1s$. \\Si verifica il fenomeno di aliasing?  Motivare la risposta.
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5mm}
+	\\
 	Dobbiamo convertire i segnali dati dal dominio del tempo al dominio delle frequenze, quindi calcoliamo di ognuno la trasformata di Fourier:\\\\
 	$u(t) = 3cos(6\pi t) + cos(2\pi t)\quad\xRightarrow[]{TdF}\quad U(f) = \frac{3}{2}\left[\delta(f-3) + \delta(f+3)\right] + \frac{1}{2}\left[\delta(f-1) + \delta(f+1)\right]$\\\\
 	$w(t) = 2cos(4\pi t)\quad\xRightarrow[]{TdF}\quad W(f) = \delta(f-2) + \delta(f+2)$\\\\
@@ -1865,7 +1888,7 @@
 		\centering
 		\includegraphics[scale=0.4]{./images/fourier53.png}
 	\end{figure}
-	\\Ora dobbiamo applicare il filtro $H(f)$, che \`e una box di ampiezza $A=1$ e banda $B=2$: teniamo solo la parte di $V_1(f)$ che viene inclusa dalla box.
+	\newpage Ora dobbiamo applicare il filtro $H(f)$, che \`e una box di ampiezza $A=1$ e banda $B=2$: teniamo solo la parte di $V_1(f)$ che viene inclusa dalla box.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.4]{./images/fourier54.png}
@@ -1903,15 +1926,16 @@
 		v(t) =  4 + 8cos(2\pi t)
 	\]
 	\newpage
-	\paragraph{Esercizio 5.2 - appello 01/07/2019}
+	\subsection*{Esercizio 5.2 - appello 01/07/2019}
 	Dato il seguente schema a blocchi trovare l’uscita $v(t)$ del sistema per via grafica lavorando nel dominio delle frequenze:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.4]{./images/fourier21.png}
 	\end{figure}
 	\\Dove $u(t) = sinc(2t) + 2$, $w(t) = 4cos(10\pi t)$, $h(t) = 4sinc(10t)$, $f(t) = 2sinc(2t)$. \\Periodo di campionamento con $T=110s$.\\Si verifica il fenomeno di Aliasing? Motivare la risposta.
-	\\\\
-----------------------------------------------------------------------------------------------------------------------------\\
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5mm}
+	\\
 	Per prima cosa, scriviamo le trasformate di Fourier dei segnali:\\
 	$u(t) = sinc(2t) + 2\quad\xRightarrow[]{TdF}\quad U(f) = \frac{1}{2}\Pi\left(\frac{f}{2}\right) + 2\delta(f)$\\
 	$w(t) = 4cos(10\pi t)\quad\xRightarrow[]{TdF}\quad W(f) = 2\left[\delta(f-5) + \delta(f+5)\right]$\\
@@ -1954,7 +1978,7 @@
 		V(f) = 0\quad\rightarrow\quad v(t) = 0 
 	\]
 	\newpage
-	\paragraph{Esercizio 5.3} Dato il seguente schema a blocchi trovare l’uscita $v(t)$ del sistema per via grafica lavorando nel dominio delle frequenze:
+	\subsection*{Esercizio 5.3} Dato il seguente schema a blocchi trovare l’uscita $v(t)$ del sistema per via grafica lavorando nel dominio delle frequenze:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.5]{./images/fourier31.png}
@@ -1974,8 +1998,9 @@
 		\end{cases}
 	\]
 	\\Si verifica il fenomeno di Aliasing? Motivare la risposta.
-	\\\\
-	----------------------------------------------------------------------------------------------------------------------------\\
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5mm}
+	\\
 	Notiamo che $H(f)$ è un filtro \textbf{passabanda} (ovvero un filtro a supporto limitato attorno a un punto che NON contiene l'origine), mentre $F(f)$ è un filtro \textbf{passabasso} (ovvero a supporto limitato attorno all'origine).\\ \\
 	Convertiamo i segnali temporali in segnali frequenziali usando la trasformata di Fourier:\\
 	$u(t) = 4sinc^2(2t)\quad\xRightarrow[]{TdF}\quad U(f) = 4\Lambda\left(\frac{f}{2}\right)$\\
@@ -1985,12 +2010,12 @@
 		\centering
 		\includegraphics[scale=0.5]{./images/fourier32.png}
 	\end{figure}
-	\\Effettuiamo la convoluzione tra i due segnali andando a centrare $U(f)$ in $A(f)$, e moltiplichiamo le rispettive ampiezze, ottentendo un segnale $V_1(f)$ di ampiezza $A = \frac{1}{2} \cdot 1 = \frac{1}{2}$.
+	\\Effettuiamo la convoluzione tra i due segnali andando a centrare $U(f)$ in $A(f)$, e moltiplichiamo le rispettive ampiezze, ottentendo un segnale $V_1(f)$ di ampiezza $A = \frac{1}{2} \cdot 4 = 2$.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.5]{./images/fourier33.png}
 	\end{figure}
-	\\ \\Ora adoperiamo il filtro $H(f)$ sul segnale $V_1(f)$, ottenendo in uscita il segnale $V_2(f)$, che avrà ampiezza $A = 1$.
+	\\ \\Ora adoperiamo il filtro $H(f)$ sul segnale $V_1(f)$, ottenendo in uscita il segnale $V_2(f)$, che avrà ampiezza $A = 4$.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.4]{./images/fourier34.png}
@@ -1999,7 +2024,7 @@
 		\centering
 		\includegraphics[scale=0.3]{./images/fourier35.png}
 	\end{figure}
-	\\ Ora dobbiamo effettuare la convoluzione tra $V_2(f)$ e $B(f)$: centriamo il primo nel secondo e moltiplichiamo le rispettive ampiezze, ottenendo il seguente segnale $V_3(f)$:
+	\\ Ora dobbiamo effettuare la convoluzione tra $V_2(f)$ e $B(f)$: centriamo il primo nel secondo e moltiplichiamo le rispettive ampiezze, ottenendo il seguente segnale $V_3(f)$, che avrà ampiezza pari alla metà di quella di partenza:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.4]{./images/fourier36.png}
@@ -2008,27 +2033,28 @@
 	L'ultimo passaggio da effettuare è quello di filtrare il segnale così ottenuto con $F(f)$, che è una box di banda $B_F = 3$ e ampiezza $A_F = 2$:
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.4]{./images/fourier37.png}
+		\includegraphics[scale=0.4]{./images/fourier38.png}
 	\end{figure}
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.4]{./images/fourier38.png}
+		\includegraphics[scale=0.4]{./images/fourier37.png}
 	\end{figure}
 	\newpage
-	\paragraph{Esercizio 5.4 - esame del 03/02/2017} Dato il seguente schema a blocchi trovare l’uscita $v(t)$ del sistema per via grafica lavorando nel dominio delle frequenze:
+	\subsection*{Esercizio 5.4 - esame del 03/02/2017} Dato il seguente schema a blocchi trovare l’uscita $v(t)$ del sistema per via grafica lavorando nel dominio delle frequenze:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.5]{./images/fourier54_1.png}
 	\end{figure}
 	\\Dove i segnali in ingresso sono: $u(t) = 3cos(2\pi 50t)$, $w(t) = 2cos(\pi 40t)$, i filtri sono $h(t) = 80sinc(80t)$, $f(t) = 40 sinc(40t)$ e il tempo di campionamento è $T = \frac{1}{10}s$.\\Stabilire inoltre se si verifica il fenomeno di \textbf{aliasing} e motivare la risposta.
 	\vspace{5px}
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5px}
 	\\
-	----------------------------------------------------------------------------------------------------------------------------\\
 	Trasformiamo tutti i segnali dati con la trasformata di Fourier:\\
 	$u(t) = 3cos(2\pi 50t)\quad\xRightarrow[]{TdF}\quad U(f) = \frac{3}{2}\left[\delta(f-50) + \delta(f+50)\right]$\\
 	$w(t) = 2cos(\pi 40 t)\quad\xRightarrow[]{TdF}\quad W(f) = \left[\delta(f-20) + \delta(f+20)\right]$\\
 	$h(t) = 80 sinc(80t)\quad\xRightarrow[]{TdF}\quad H(f) =
-	\Pi\left(\frac{t}{80}\right)$\\$f(t) = 40 sinc(40t) \quad\xRightarrow[]{TdF}\quad  \Pi\left(\frac{t}{40}\right)$\vspace{5px}\\
+	\Pi\left(\frac{t}{80}\right)$\\$f(t) = 40 sinc(40t) \quad\xRightarrow[]{TdF}\quad  F(f) = \Pi\left(\frac{t}{40}\right)$\vspace{5px}\\
 	Il tempo $T$ con cui campioniamo il segnale nel dominio del tempo, diventa la frequenza $f$ con cui eseguiamo la replicazione del segnale nel dominio delle frequenze:\\$f = \frac{1}{T} = 10$Hz.\\ \\
 	Cominciamo l'esercizio disegnando i due segnali in input, $U(f)$ e $W(f)$:
 	\begin{figure}[h!]
@@ -2040,10 +2066,10 @@
 		\centering
 		\includegraphics[scale=0.5]{./images/fourier54_3.png}
 	\end{figure}
-	\\ \\Il prossimo passo è filtrare il segnale così ottenuto con $H(f)$, che ha uno spettro di 80Hz:
+	\\ \\Il segnale risultante dalla convoluzione sono quattro impulsi di ampiezza $\frac{3}{2}$ alle frequenze -70, -30, +30 e +70. \\Il prossimo passo è filtrare il segnale così ottenuto con $H(f)$, che ha uno spettro di 80Hz:
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.5]{./images/fourier54_4.png}
+		\includegraphics[scale=0.4]{./images/fourier54_4.png}
 	\end{figure}
 	\\Notiamo che l'unica parte di segnale che resta sono gli impulsi in -30 e 30. L'ampiezza rimane invariata, perché il filtro H(f) ha ampiezza unitaria.
 	\begin{figure}[h!]
@@ -2055,34 +2081,35 @@
 		\centering
 		\includegraphics[scale=0.4]{./images/fourier54_6.png}
 	\end{figure}
-	\\ \\Come ultimo passaggio, dobbiamo filtrare il segnale con $F(f)$:
+	\newpage Alla fine del processo, otteniamo una serie di impulsi distanziati tra loro di 10Hz e di ampiezza 3. Come ultimo passaggio, dobbiamo filtrare il segnale con $F(f)$:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.4]{./images/fourier54_7.png}
 	\end{figure}
-	\\Il segnale finale, $V(f)$, risulta essere composto dunque da quattro impulsi di ampiezza 2:
+	\\Il segnale finale, $V(f)$, risulta essere composto dunque da quattro impulsi di ampiezza 3:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.4]{./images/fourier54_8.png}
 	\end{figure}
 	\\L'equazione di questo segnale è 
 	\[
-		V(f) = 2\left[\delta(f-20) + \delta(f+20) + \delta(f-10) + \delta(f+10) + \delta(f)\right] 
+		V(f) = 3\left[\delta(f-20) + \delta(f+20) + \delta(f-10) + \delta(f+10) + \delta(f)\right] 
 	\]
-	Applicando l'antitrasformata di Fourier possiamo riportare il segnale nel dominio del tempo:
+	Applicando l'antitrasformata di Fourier riportiamo il segnale nel dominio del tempo e otteniamo la soluzione:
 	\[
-		v(t) = 4cos(2\pi 20t) + 4cos(2\pi 10t) + 4
+		v(t) = 6cos(2\pi 20t) + 6cos(2\pi 10t) + 6
 	\]
 	\newpage
-	\paragraph{Esercizio 5.5 - esame del 06/06/2017} Dato il seguente schema a blocchi trovare l’uscita $v(t)$ del sistema per via grafica lavorando nel dominio delle frequenze:
+	\subsection*{Esercizio 5.5 - esame del 06/06/2017} Dato il seguente schema a blocchi trovare l’uscita $v(t)$ del sistema per via grafica lavorando nel dominio delle frequenze:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.4]{./images/fourier55_1.png}
 	\end{figure}
 	\\Dove i segnali in ingresso sono: $u(t) = 2cos(4\pi t) + cos(2\pi t)$, $w(t) = 2cos(4\pi t)$, i filtri sono $h(t) = 4sinc(4t)$, $f(t) = 2 sinc(2t)$ e il tempo di campionamento è $T = 1s$.\\Stabilire se si verifica il fenomeno di \textbf{aliasing}, motivando la risposta.
 	\vspace{5px}
+	\par\noindent\rule{\textwidth}{0.4pt}
+	\vspace{5px}
 	\\
-	----------------------------------------------------------------------------------------------------------------------------\\
 	Trasformata di Fourier dei segnali coinvolti:\vspace{5px}\\
 	$u(t) = 2cos(4\pi t) + cos(2\pi t)\quad\xRightarrow[]{TdF}\quad U(f) = \delta(f-2) + \delta(f + 2) + \frac{1}{2}[\delta(f-1) + \delta(f+1)]$\\
 	$w(t) = 2cos(4\pi t)\quad\xRightarrow[]{TdF}\quad W(f) = \delta(f-2) + \delta(f + 2)$\\
